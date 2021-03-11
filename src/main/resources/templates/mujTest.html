@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Muj prvni formular by spring</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1>Formular</h1>
+<form action="#" th:action="@{/mujTest}" method="post">
+    <p>Jmeno: <input type="text" name="jmeno"></p>
+    <p>Zprava: <input type="text" name="text"></p>
+    <p>Email: <input type="email" name="mail"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>
+<h1>Odpoved</h1>
+<p th:if="${jmenoOut != null &&textOut!=null&&mailOut!=null}"
+   th:text="'Vitejte pane/pani '+ ${jmenoOut} + ' na vasi msg: ' + ${textOut} + ' bude odpovozeno na mail ' + ${mailOut}"></p>
+<p th:text="'Aktualni stav pocitadla zobrazeni: ' + ${pocitadlo}"></p>
+</body>
+</html>
